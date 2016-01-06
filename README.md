@@ -19,3 +19,9 @@ Like http://haxx.in/upc_keys.c
 [*] Found passphrase for SAAP77533056 passphrase = FPBAHZBX
 [*] Found passphrase for SAAP83855456 passphrase = WZRGAABJ
 ```
+
+```bash
+➜  Code  ./speedtouch_keys.py3
+[*] Testing on ssid SpeedTouchF8A3D0
+[*] Found key 742DA831D2
+```
