@@ -23,4 +23,4 @@ for year in range(5, 15):
         for x1 in range(0, 36):
             for x2 in range(0, 36):
                 for x3 in range(0, 36):
-                    check("CP" + str(year).zfill(2) + str(week).zfill(2)+ chars[x1] + chars[x2] + chars[x3])
+                    check("CP" + str(year).zfill(2) + str(week).zfill(2) + chars[x1] + chars[x2] + chars[x3])
