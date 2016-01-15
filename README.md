@@ -3,21 +3,21 @@ Upc key generation written in python
 Like http://haxx.in/upc_keys.c
 
 ```bash
-➜  Code  ./upc_keys.py3 123456
-[*] Target is 123456
-[*] Found passphrase for SAAP03855456 passphrase = YMECTADR
-[*] Found passphrase for SAAP17529856 passphrase = URQCNHDA
-[*] Found passphrase for SAAP17533056 passphrase = UJBAHFGC
-[*] Found passphrase for SAAP23855456 passphrase = CCFNEDJA
-[*] Found passphrase for SAAP37529856 passphrase = EHJBGJHV
-[*] Found passphrase for SAAP37533056 passphrase = GNUVPNGJ
-[*] Found passphrase for SAAP43855456 passphrase = YUYSKRJE
-[*] Found passphrase for SAAP57529856 passphrase = MBBAGCFY
-[*] Found passphrase for SAAP57533056 passphrase = DGHJHNNE
-[*] Found passphrase for SAAP63855456 passphrase = HJYXBCZB
-[*] Found passphrase for SAAP77529856 passphrase = YPDAGTZD
-[*] Found passphrase for SAAP77533056 passphrase = FPBAHZBX
-[*] Found passphrase for SAAP83855456 passphrase = WZRGAABJ
+➜  Code  ./upc_keys.py3 1234567
+[*] Target is 1234567
+[*] Found passphrase for 5 GHZ 76188450PAAS passphrase = ZDUEKEST
+[*] Found passphrase for 5 GHZ 76731811PAAS passphrase = XKQFAPGM
+[*] Found passphrase for 24 GHZ SAAP19165767 passphrase = CWGUJAJX
+[*] Found passphrase for 24 GHZ SAAP25488167 passphrase = AJCZEGNA
+[*] Found passphrase for 24 GHZ SAAP31813767 passphrase = CYCCHFDY
+[*] Found passphrase for 5 GHZ 76756193PAAS passphrase = EHBFKCSP
+[*] Found passphrase for 5 GHZ 76188454PAAS passphrase = URZPZGHF
+[*] Found passphrase for 5 GHZ 76731815PAAS passphrase = FHEACCDE
+[*] Found passphrase for 24 GHZ SAAP59165767 passphrase = YKHQKCYC
+[*] Found passphrase for 24 GHZ SAAP65488167 passphrase = HHSGPCJH
+[*] Found passphrase for 24 GHZ SAAP71813767 passphrase = BARSFACU
+[*] Found passphrase for 5 GHZ 76756197PAAS passphrase = CGZEAEZB
+[*] Found passphrase for 5 GHZ 76188458PAAS passphrase = FXGHTWRF
 ```
 
 ```bash
