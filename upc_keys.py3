@@ -105,7 +105,6 @@ def check(s1, s2, s3, s4):
 for s1 in range(0,10):
     for s2 in range(0,100):
         for s3 in range(0,10):
-            for s4 in range(0,10000):
-                # are the last 2 digits the same as the last 2 digits on the SSID
-                if (s4 - last_two_digits_of_target) % 100 == 0:
-                    check(s1, s2, s3, s4)
+            for s4 in range(0,100):
+                # the last 2 digits are the same as the last 2 digits on the SSID, so add them
+                check(s1, s2, s3, s4 * 100 + last_two_digits_of_target)
