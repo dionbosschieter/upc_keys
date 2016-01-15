@@ -99,10 +99,10 @@ def check(s1, s2, s3, s4):
     if check24:
         generate_passphrase(serial, '24')
 
-for s1 in range(0,9):
-    for s2 in range(0,99):
-        for s3 in range(0,9):
-            for s4 in range(0,9999):
+for s1 in range(0,10):
+    for s2 in range(0,100):
+        for s3 in range(0,10):
+            for s4 in range(0,10000):
                 # are the last 2 digits the same as the last 2 digits on the SSID
                 if (s4 - last_two_digits_of_target) % 100 == 0:
                     check(s1, s2, s3, s4)
